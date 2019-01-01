@@ -1,12 +1,12 @@
-const dotenv = require('dotenv');
+import {DotenvConfigOptions, config} from 'dotenv';
 
 export type PluginTransformResults = {
     code?: string;
     id?: string;
 };
 
-export const env = () => {
-    const { parsed: result } = dotenv.config();
+export function env (options?: DotenvConfigOptions) {
+    const { parsed: result } = config(options);
     return {
         name: 'env',
         transform: (
