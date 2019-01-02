@@ -22,6 +22,7 @@ export const config: Config = {
   ]
 };
 ```
+You can additionally, pass [options](https://github.com/motdotla/dotenv#options) to the `env` plugin.
 
 Add `.env` file in the root of your project
 
