@@ -19,7 +19,7 @@
   ],
   "devDependencies": {
     "@types/node": "13.5.2",
-    "typescript": "3.2.2"
+    "typescript": "3.8.2"
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
