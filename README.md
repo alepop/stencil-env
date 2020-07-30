@@ -33,6 +33,9 @@ TEST=test string
 
 After compilation, `process.env.TEST` will be replaced by it variable from `.env` file.
 
+### Gotchas
+You should to take in mind that `process.env` will not exist as usable object in your project when you use this plugin. It's only replace exact `.env` variable with it's value on a build phase.
+
 ## Related
 
 * [Stencil](https://stenciljs.com/)
