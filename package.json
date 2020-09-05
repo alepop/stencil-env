@@ -18,7 +18,7 @@
     "plugin"
   ],
   "devDependencies": {
-    "@types/node": "14.0.4",
+    "@types/node": "14.6.4",
     "typescript": "3.9.3"
   },
   "dependencies": {
