@@ -1,17 +1,21 @@
-import {DotenvConfigOptions, config} from 'dotenv';
+import {DotenvConfigOptions, config, DotenvParseOutput} from 'dotenv';
 
 export type PluginTransformResults = {
     code?: string;
     id?: string;
 };
+export type ExtConfigType = {
+    extend: DotenvParseOutput;
+}
 
 // https://stackoverflow.com/a/1144788/9238321
 function replaceAll(str: string, find: string, replace: string) {
     return str.replace(new RegExp(find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1"), 'g'), replace);
 }
 
-export function env (options?: DotenvConfigOptions) {
-    const { parsed: result } = config(options);
+export function env (options?: DotenvConfigOptions & ExtConfigType) {
+    const { parsed } = config(options);
+    const result = { ...parsed, ...(options?.extend || {}) };
     return {
         name: 'env',
         transform: (
